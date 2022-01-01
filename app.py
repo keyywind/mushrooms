@@ -54,4 +54,4 @@ def predict():
     #print(numpy.array(model.predict(matrix)))
     return render_template("index.html", edibility = prediction, alertFlag = 1)
     
-app.run(port = 1207)
+app.run()
