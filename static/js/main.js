@@ -17,7 +17,10 @@ function convert_string(valueList) {
   return string;
 }
 function get_values() {
-  console.log(convert_string(get_value()));
+  console.log("SUCCESS");
+  let link = ("/request" + convert_string(get_value()));
+  console.log(link);
+  window.location.href = link;
 }
 function remove_blur() {
   let body = document.getElementsByClassName("main-body")[0];
