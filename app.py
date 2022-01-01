@@ -53,5 +53,6 @@ def predict():
     #print(matrix)
     #print(numpy.array(model.predict(matrix)))
     return render_template("index.html", edibility = prediction, alertFlag = 1)
-    
-app.run()
+
+if __name__ == '__main__':
+    app.run(debug = True)
