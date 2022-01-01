@@ -1,0 +1,130 @@
+html, body, .main-body {
+  margin : 0;  padding : 0;  width : 100%;  height : 100%;  text-align : center;
+  /*background-color : azure;  */
+}
+body {
+  background-color : rgb(62, 87, 30);
+  background-image : url("../img/mushroom_background.jpg");  background-size : cover;  background-attachment : fixed;
+}
+h1, h2, h3, h4, h5, h6 {  margin : 0;  padding : 0;  font-family : sans-serif;  color : rgb(16, 16, 16);  }
+.top-section {
+  margin : 0;  padding : 0;
+  position : absolute;  width : 100%;  top : 0px;  z-index : 1000;
+  /*background-color : yellow;  */
+}
+.title-section {
+  margin : 0;  padding : 0.5em;  text-align : center;
+  background-color : rgba(128, 128, 128, 0.4);
+}
+.title-box {
+  padding : 0.5em;  text-align : center;
+  background-color : rgba(0, 0, 0, 0.005);
+}
+.title-text {
+  color : azure;  text-shadow : 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+.navigation-section {
+  margin : 0;  padding : 0.5em 0 0.5em;  display : grid;
+  grid-template-columns : 1fr;
+  background-color : aliceblue;
+  box-shadow : 0px 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.navigation-box {
+  text-align : center;  border-radius : 3px;  width : 50%;  margin : 0 auto;
+  background-color : rgba(240, 255, 255, 0.5);
+  box-shadow : 0px 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+.navigation-text {
+  text-shadow : 0px 0px 1px rgba(0, 0, 0, 0.3);
+}
+.navigation-box:hover {  background-color : rgba(0, 0, 0, 0.001);  border-radius : 10px;  box-shadow : 0px 0px 1px 1px rgba(0, 0, 0, 0.2);  transform : scale(1.1);  }
+.navigation-box:hover .navigation-text {  color : orangered;  text-shadow : 0px 0px 0px rgba(255, 255, 255, 0.3);  }
+.mid-section {
+  width : 80%;  margin : 0 auto;  padding : 1em;  height : 100%;
+  background-color : rgba(240, 255, 255, 0.8);
+}
+.mid-bot-section {
+  min-height : 100%;  display : grid;
+  grid-template-rows : 1fr auto;  overflow : hidden;  margin-top : 111.2px;
+  /* background-color : black;  */
+}
+.entry-section {
+  display : grid;  grid-template-columns : 1fr;
+  grid-gap : 0.1em;  padding : 1em;  margin : 0 auto;  width : 60%;
+  background-color : rgba(188, 188, 188, 0.9);
+}
+.entry-box {
+  width : 100%;  display : grid;
+  grid-template-columns : 1fr 1fr;  text-align : center;
+  padding : 0.5em 0 0.5em;  grid-template-rows : 1fr;
+  background-color : rgba(240, 255, 255, 0.8);
+  justify-items : center;
+}
+.entry-value {
+  width : 50%;  text-align : center;  border-radius : 3px;
+}
+.entry-text {
+  font-family : cursive;  font-weight : bold;
+}
+.result-section {
+  width : 60%;  margin : 0 auto;  padding : 1em;
+  background-color : rgba(128, 128, 128, 0.9);
+}
+.bot-section {
+  width : 100%;  padding : 0.5em 0 0.5em;
+  background-color : black;
+}
+.submit-button {
+  width : 30%;
+}
+.result-text {
+  width : 30%;
+}
+.top_fixed {
+  top : -68px;
+  position : fixed;
+}
+.obscure_top {
+  background-color : aliceblue;
+}
+.copyright-box {  padding : 1px;  }
+.clickable {
+  cursor : pointer;  text-decoration : none;
+}
+.copyright-text {
+  color : azure;
+}
+.loader-div {
+  position : fixed;  top : 50vh;  left : 50vw;
+}
+.loader {
+  border : 2vw solid #f3f3f3;  border-radius : 50%;  width : 20vw;  height : 20vw;  margin-top : -10vw;  margin-left : -10vw;
+  border-top : 2vw solid #3498db;  animation : loader_rotate 4s linear infinite;  box-shadow : 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.blurred {
+  filter : blur(128px);
+}
+@keyframes loader_rotate
+{
+  0% {  transform : scale(1) rotate(0deg);  }
+  70% {  transform : scale(1.1) rotate(200deg);  }
+  100% {  transform : scale(1) rotate(360deg);  }
+}
+@media (max-width : 720px) {
+  .mid-section {
+    width : 100%;  background-color : rgba(240, 255, 255, 1);
+  }
+  .entry-box {
+    grid-template-columns : 1fr;  grid-template-rows : 1fr 1fr;
+    grid-gap : 0.1em;
+  }
+  .result-text {
+    width : 55%;
+  }
+  .title-section {
+    background-color : rgba(240, 255, 255, 1);
+  }
+  .title-text {
+    color : rgb(16, 16, 16);
+  }
+}
