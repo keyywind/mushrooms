@@ -18,7 +18,7 @@ function convert_string(valueList) {
 }
 function get_values() {
   console.log("SUCCESS");
-  let link = ("/request" + convert_string(get_value()));
+  let link = ("/predict" + convert_string(get_value()));
   console.log(link);
   window.location.href = link;
 }
