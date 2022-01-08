@@ -9,11 +9,21 @@ model = models.load_model("mushroom_model.h5")
 
 app = Flask(__name__)
 
+def to_binary(data, bits): return numpy.array([data >> i & 1 for i in range(bits - 1,-1,-1)])
+
 columns_to_eliminate = [
+    18,    
+        
     17,
     16,
+    
+    8,
+    
     6,
-    2,       
+    2,    
+    
+    1,
+    
     0
 ]
 
@@ -46,9 +56,11 @@ def index():
 @app.route("/<path:requests>", methods = [ "POST", "GET" ])
 def predict(requests = None):
     matrix = numpy.zeros(shape = (total_length)).tolist()
+    #print(total_length)
     for i in range(0, total_length, 1):
         #print(i)
-        matrix[i] = utils.to_categorical(weights[i][request.args.get(f"v{i}")], num_classes = lengths[i])
+        matrix[i] = to_binary(weights[i][request.args.get(f"v{i}")], lengths[i].bit_length())
+        #matrix[i] = utils.to_categorical(weights[i][request.args.get(f"v{i}")], num_classes = lengths[i])
     #matrix = numpy.concatenate(tuple([ x for x in matrix ]))
     #print(len(matrix))
     #print(matrix)
